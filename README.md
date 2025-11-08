@@ -1,3 +1,4 @@
+# Stock_Price_Predictions
 📈 Stock Price Prediction Using Machine Learning
 
 This project is a Machine Learning-based Stock Price Predictor that estimates the future trend of stock prices for various companies. It includes a Streamlit web interface where users can input a company name and view predicted stock prices with clear and attractive visualizations.

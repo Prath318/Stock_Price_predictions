@@ -1,95 +1,85 @@
-# Stock_Price_Predictions
-📈 Stock Price Prediction Using Machine Learning
+# 📈 Indian Stock Price Predictor
 
-This project is a Machine Learning-based Stock Price Predictor that estimates the future trend of stock prices for various companies. It includes a Streamlit web interface where users can input a company name and view predicted stock prices with clear and attractive visualizations.
+A machine learning-based stock price predictor with an interactive web interface. The project predicts future stock prices for Indian companies using historical data and regression models, providing visualizations and investment insights through a clean Streamlit dashboard.
 
-🚀 Project Overview
+---
 
-This project predicts the future stock prices of selected companies based on their historical data using Machine Learning algorithms such as Linear Regression.
-It preprocesses the dataset, trains an ML model, and displays:
+## ✨ Features
 
-Historical stock price trends
+- **Model training pipeline** — engineers 13 features (lags, moving averages, returns) from historical stock data and trains Linear Regression and Random Forest models
+- **Interactive dashboard** — Streamlit UI to explore price trends for 8 major Indian companies
+- **Buy/Sell/Hold recommendations** — generated from price momentum signals
+- **Visualizations** — trend charts and comparative views for quick analysis
 
-Predicted future prices
+---
 
-Suggested companies and insights through a simple and clean UI
+## 🧱 Tech Stack
 
-🧠 Features
+| Layer | Tools |
+|---|---|
+| Language | Python |
+| Web UI | Streamlit |
+| Model training | Jupyter Notebook |
+| ML | scikit-learn (Linear Regression, Random Forest) |
+| Data handling | pandas, numpy |
+| Visualization | matplotlib |
 
-📊 Data Loading — Reads cleaned stock data from an Excel/CSV file
+---
 
-🧹 Data Preprocessing — Handles missing values, scales features, and prepares data for training
+## 📂 Project Structure
 
-🤖 Model Training — Uses Linear Regression for predicting stock trends
+```
+├── README.md                        # Project documentation
+├── app.py                           # Streamlit dashboard with simulated data
+├── STOCK_price_prediction.ipynb     # Jupyter notebook with model training pipeline
+├── stock_market_dataset.xlsx        # Historical stock market data (20,000 rows)
+```
 
-💡 Interactive UI — Built using Streamlit for smooth user interaction
+---
 
-📈 Visual Insights — Displays line plots comparing past and predicted prices
+## ⚙️ How It Works
 
-🧭 Company Suggestions — Provides company options to guide the user
+The project follows a two-phase workflow:
 
-🛠️ Technologies Used
-Category	Tools & Libraries
-Programming Language	Python
-Libraries	pandas, numpy, matplotlib, scikit-learn
-Framework	Streamlit
-Model	Linear Regression
-Environment	Jupyter Notebook / VS Code
-📁 Project Structure
-├── app.py                       # Streamlit UI for prediction and visualization
-├── stock_price_prediction.ipynb  # Jupyter Notebook for model training
-├── model.pkl                    # Saved ML model
-├── stock_market_dataset_Cleaned.xlsx  # Cleaned dataset
-├── requirements.txt             # Dependencies
-└── README.md                    # Project documentation
+1. **Training Phase** (`STOCK_price_prediction.ipynb`)
+   Loads historical stock data from Excel, engineers 13 features (lags, moving averages, returns), trains both Linear Regression and Random Forest models, and selects the best-performing model — **Random Forest** (RMSE: **18.88**).
 
-🧩 Machine Learning Explanation
+2. **Application Phase** (`app.py`)
+   A Streamlit dashboard that generates simulated stock data for 8 Indian companies — **TCS, Infosys, Reliance, HDFC Bank, Wipro, Adani Enterprises, ICICI Bank, HCL Tech** — over a 60-day window, letting users select a company, view price trends, and see Buy/Sell/Hold recommendations based on momentum.
 
-The model uses Linear Regression, a simple supervised learning algorithm that predicts continuous values like stock prices.
+---
 
-Input Features: Date, Open, High, Low, Close, Volume
+## 🚀 Getting Started
 
-Target Variable: Future Closing Price
+### 1. Install dependencies
+```bash
+pip install streamlit pandas numpy scikit-learn matplotlib openpyxl
+```
 
-Process:
+### 2. Run the dashboard
+```bash
+streamlit run app.py
+```
+Then open **http://localhost:8501** and select a company to analyze.
 
-Load and preprocess the dataset
+### 3. (Optional) Train the model
+Open `STOCK_price_prediction.ipynb` in Jupyter and run all cells.
+> Requires `stock_market_dataset.xlsx` to be present in the working directory.
 
-Split data into training and testing sets
+---
 
-Train the Linear Regression model on historical stock data
+## 🔮 Future Improvements
 
-Predict future stock prices
+- Replace simulated dashboard data with live/real-time market feeds
+- Integrate the trained Random Forest model directly into `app.py` (currently the dashboard uses simulated data independent of the notebook's model)
+- Add more technical indicators (RSI, MACD, Bollinger Bands)
+- Deploy the dashboard (Streamlit Community Cloud / Docker)
 
-Display results and visualizations using Streamlit
+---
 
-This approach provides a clear understanding of how stock price prediction works with basic ML techniques.
+## ⚠️ Disclaimer
 
-💻 Streamlit UI Overview
+This project is for **educational purposes only**. Predictions and recommendations are based on historical/simulated data and simple statistical models — they should **not** be used as financial advice for real investment decisions.
 
-The Streamlit interface allows users to:
+---
 
-Select or input a company name
-
-Click a button to predict its future stock price
-
-View stock price visualizations (past vs predicted trends)
-
-See clear and interactive plots in a clean layout
-
-🧭 Future Scope
-
-🔮 Use Random Forest or LSTM models for more accurate predictions
-
-📊 Add multi-company comparison charts
-
-🎨 Improve visualization with more interactive elements
-
-🧠 Integrate model retraining for updated predictions
-
-👨‍💻 Author
-
-Prathamesh Mandhane
-🎓 B.Tech in Artificial Intelligence & Data Science
-💡 Machine Learning & Data Analytics Enthusiast
-📍 Yeshwantrao Chavan College of Engineering, Nagpur
